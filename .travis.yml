@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t REACTFRONTEND -f dockerfile.dev .
+  - docker build --tag react-frontend -f dockerfile.dev .
 
 script:
-  - docker run -e CI=true REACTFRONTEND npm run test -- --coverage
+  - docker run -e CI=true react-frontend npm run test -- --coverage
